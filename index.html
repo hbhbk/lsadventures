@@ -8,9 +8,9 @@
     <script>
         function loginWithSteam() {
             const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
-            const returnUrl = encodeURIComponent("https://lsadventures.com/return"); // Replace with your URL
+            const returnUrl = encodeURIComponent("https://lsadventures.ee/return"); // Replace with your URL
             const apiKey = "35F80E816805700C057F5AC674A49881";  // Use your Steam API key
-            const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.com&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.assoc_handle=YOUR_ASSOCIATION_HANDLE`;
+            const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.ee&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.assoc_handle=YOUR_ASSOCIATION_HANDLE`;
 
             window.location = steamApiUrl;  // Redirect to Steam's OpenID login page
         }
