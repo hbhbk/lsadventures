@@ -6,8 +6,10 @@
     <title>Steam Return</title>
     <script>
         window.onload = function() {
-            // URL-i analüüsimine, et kontrollida, kas sisselogimine oli edukas
+            // Kõik URL-i parameetrid
             const params = new URLSearchParams(window.location.search);
+            console.log("URL Parameters: ", Object.fromEntries(params.entries()));  // Logi kõik parameetrid konsooli
+
             const steamId = params.get('openid.identity');
             const success = params.get('openid.mode');
 
