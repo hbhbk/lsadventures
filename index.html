@@ -8,7 +8,7 @@
     <script>
         function loginWithSteam() {
             const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
-            const returnUrl = encodeURIComponent("https://yourwebsite.com/return"); // Replace with your URL
+            const returnUrl = encodeURIComponent("https://lsadventures.com/return"); // Replace with your URL
             const apiKey = "35F80E816805700C057F5AC674A49881";  // Use your Steam API key
             const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://yourwebsite.com&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.assoc_handle=YOUR_ASSOCIATION_HANDLE`;
 
@@ -25,9 +25,8 @@
             <div class="d-flex justify-content-center gap-3">
                 
                
-                <a href="avaleht.html" class="btn btn-primary">
-                    Logi sisse!
-                </a>
+                <h1>Steam Login</h1>
+                <button onclick="loginWithSteam()">Logi sisse</button>
                 
             </div>
         </div>
