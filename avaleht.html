@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="main.css">
     <script>
         window.onload = function() {
-            // Kontrollime URL-i parameetreid, et teada saada, kas Steam login õnnestus
+            // Kontrollige URL-i parameetreid, et teada saada, kas Steam login õnnestus
             const params = new URLSearchParams(window.location.search);
             const steamId = params.get('openid.identity');
             const success = params.get('openid.mode');
@@ -28,6 +28,7 @@
                             // Kuvame kasutaja nime ja profiilipildi
                             document.getElementById('steamName').innerText = player.personaname;
                             document.getElementById('profileImage').src = player.avatarfull;
+                            document.getElementById('profileImage').style.display = 'block';  // Veenduge, et pilt kuvatakse
                         }
                     })
                     .catch(err => console.error('API viga:', err));
@@ -37,6 +38,16 @@
                 document.getElementById('status').innerText = 'Steam login failed';
             }
         };
+
+        // Suuna kasutaja Steam'i sisselogimislehele
+        function loginWithSteam() {
+            const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
+            const returnUrl = encodeURIComponent("https://lsadventures.ee/avaleht.html"); // Suunda pärast sisselogimist sellele URL-ile
+            const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.ee&openid.identity=http://specs.openid.net/auth/2.0/identifier_select`;
+
+            // Suuna kasutaja Steam'i OpenID lehele
+            window.location = steamApiUrl;
+        }
     </script>
 </head>
 <body>
@@ -52,31 +63,15 @@
             <li><a href="paketid.html">Paketid</a></li>
         </ul>
         <div class="user-profile">
-            <img id="profileImage" src="" alt="User Profile Picture" style="width: 50px; height: 50px; border-radius: 50%;">
-            <span id="steamName">GetUserPoints</span>  <!-- Siia kuvatakse kasutaja nimi -->
+            <!-- Kasutaja profiilipilt -->
+            <img id="profileImage" src="" alt="User Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; display: none;">
+            <!-- Kasutaja nimi -->
+            <span id="steamName">GetUserPoints</span>  
         </div>
     </div>
     <div class="content">
         <h1>Avaleht</h1>
         <p>Welcome to LS Adventures!</p>
-
-        <!-- Siia kuvatakse login olek -->
-        <div id="status">Palun logige sisse Steamiga...</div>
-
-        <!-- Sisselogimise nupp -->
-        <button onclick="loginWithSteam()">Log in with Steam</button>
     </div>
-
-    <script>
-        // Suuna kasutaja Steam'i sisselogimislehele
-        function loginWithSteam() {
-            const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
-            const returnUrl = encodeURIComponent("https://lsadventures.ee/avaleht.html"); // Suunda pärast sisselogimist sellele URL-ile
-            const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.ee&openid.identity=http://specs.openid.net/auth/2.0/identifier_select`;
-
-            // Suuna kasutaja Steam'i OpenID lehele
-            window.location = steamApiUrl;
-        }
-    </script>
 </body>
 </html>
