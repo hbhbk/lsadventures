@@ -23,31 +23,30 @@
                 fetch(steamApiUrl)
                     .then(response => response.json())
                     .then(data => {
+                        console.log('API vastus:', data);  // Logi API vastus konsooli
+                        
+                        // Kontrollige, kas API vastus sisaldab oodatud andmeid
                         const player = data.response.players[0];
                         if (player) {
                             // Kuvame kasutaja nime ja profiilipildi
                             document.getElementById('steamName').innerText = player.personaname;
                             document.getElementById('profileImage').src = player.avatarfull;
                             document.getElementById('profileImage').style.display = 'block';  // Veenduge, et pilt kuvatakse
+                        } else {
+                            // Kui kasutaja andmeid ei leita, kuvage veateade
+                            document.getElementById('status').innerText = 'Kasutaja andmeid ei leitud.';
                         }
                     })
-                    .catch(err => console.error('API viga:', err));
+                    .catch(err => {
+                        console.error('API viga:', err);
+                        document.getElementById('status').innerText = 'API päring ebaõnnestus.';
+                    });
 
             } else {
                 // Kui login ebaõnnestub
                 document.getElementById('status').innerText = 'Steam login failed';
             }
         };
-
-        // Suuna kasutaja Steam'i sisselogimislehele
-        function loginWithSteam() {
-            const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
-            const returnUrl = encodeURIComponent("https://lsadventures.ee/avaleht.html"); // Suunda pärast sisselogimist sellele URL-ile
-            const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.ee&openid.identity=http://specs.openid.net/auth/2.0/identifier_select`;
-
-            // Suuna kasutaja Steam'i OpenID lehele
-            window.location = steamApiUrl;
-        }
     </script>
 </head>
 <body>
@@ -72,6 +71,9 @@
     <div class="content">
         <h1>Avaleht</h1>
         <p>Welcome to LS Adventures!</p>
+
+        <!-- Siia kuvatakse login olek -->
+        <div id="status">Palun logige sisse Steamiga...</div>
     </div>
 </body>
 </html>
