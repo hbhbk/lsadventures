@@ -18,7 +18,7 @@
                 document.getElementById('status').innerText = 'Sisselogimine õnnestus!';
 
                 // Steam API kaudu kasutaja andmete toomine
-                const steamApiUrl = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=YOUR_STEAM_API_KEY&steamids=${steamId}`;
+                const steamApiUrl = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=35F80E816805700C057F5AC674A49881&steamids=${steamId}`;
 
                 fetch(steamApiUrl)
                     .then(response => response.json())
