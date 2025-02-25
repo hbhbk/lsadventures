@@ -1,0 +1,18 @@
+
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .background {
+    height: 100vh;
+    background-image: url('background.jpg');  /* Paiguta oma pilt siia */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);  
+    height: 100%;
+  }
+  
+ 
