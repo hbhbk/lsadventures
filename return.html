@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Return</title>
+    <script>
+        window.onload = function() {
+            // URL-i analüüsimine, et kontrollida, kas sisselogimine oli edukas
+            const params = new URLSearchParams(window.location.search);
+            const steamId = params.get('openid.identity');
+            const success = params.get('openid.mode');
+
+            if (steamId && success === 'id_res') {
+                // Kui sisselogimine õnnestus, suunatakse kasutaja avalehele
+                window.location.href = "avaleht.html";  // Suunda kasutaja avalehele
+            } else {
+                // Kui sisselogimine ebaõnnestus, näita veateadet
+                alert("Steam login failed.");
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Processing Steam Login...</h1>
+</body>
+</html>
