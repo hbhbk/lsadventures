@@ -8,7 +8,7 @@
         // Suuna kasutaja Steam'i sisselogimislehele
         function loginWithSteam() {
             const steamOpenIdUrl = "https://steamcommunity.com/openid/login";
-            const returnUrl = encodeURIComponent("https://lsadventures.ee/avaleht.html"); // Suunda pärast sisselogimist sellele URL-ile
+            const returnUrl = encodeURIComponent("https://lsadventures.ee/avaleht"); // Suunda pärast sisselogimist sellele URL-ile
             const steamApiUrl = `${steamOpenIdUrl}?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnUrl}&openid.realm=http://lsadventures.ee&openid.identity=http://specs.openid.net/auth/2.0/identifier_select`;
 
             // Suuna kasutaja Steam'i OpenID lehele
