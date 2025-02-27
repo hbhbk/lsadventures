@@ -25,79 +25,190 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        main {
             padding: 20px;
-            background-color: #f4f4f4;
         }
-        h1, h2 {
+
+        h2 {
             color: #333;
+            font-size: 24px;
+            margin-top: 30px;
         }
-        .rules {
-            background: white;
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: red; /* Suurtähtedega sõnad on punased */
+        }
+
+        .section-header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .rules-list {
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .rules p {
-            margin: 10px 0;
+
+        .rules-list ul {
+            margin: 0;
         }
-        .highlight {
-            color: red;
+
+        .rules-list li {
+            font-size: 16px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="rules">
-        <h1>Üldreeglid</h1>
-        <p><span class="highlight">KEELATUD</span>: Vaimuhaige, massimõrvari, palgamõrvari jms karakteri mängimine</p>
-        <p>Peale igat surma kehtib uue elu reegel</p>
-        <p>Kui respawnid haiglas on sul 25 minutit mälukaotust ja sa ei mäleta viimasest olukorrast midagi</p>
-        <p><span class="highlight">KEELATUD</span>: RP olukorra ajal OOC juttu ajamine</p>
-        <p><span class="highlight">KEELATUD</span>: Metagaming</p>
-        <p><span class="highlight">KEELATUD</span>: Combat Log</p>
-        <p><span class="highlight">KEELATUD</span>: Powergame</p>
-        <p><span class="highlight">KEELATUD</span>: FailRP</p>
-        <p><span class="highlight">KEELATUD</span>: Cop-bait</p>
-        <p><span class="highlight">KEELATUD</span>: VDM</p>
-        <p><span class="highlight">KEELATUD</span>: RDM</p>
-        <p><span class="highlight">KEELATUD</span>: Faildrive</p>
-        <p><span class="highlight">KEELATUD</span>: FearRP/GunFear</p>
-        <p><span class="highlight">KEELATUD</span>: Sõjaväe varustuse varastamine sõjaväebaasist</p>
-        <p><span class="highlight">KEELATUD</span>: Päästmeametnike sõidukite varastamine</p>
-        <p><span class="highlight">KEELATUD</span>: Riigiametnike hukkamine</p>
-        <p><span class="highlight">KEELATUD</span>: Bunnyhop</p>
-        <p><span class="highlight">KEELATUD</span>: MoneyFlood</p>
-        <p><span class="highlight">KEELATUD</span>: Buggide ära kasutamine</p>
-        <p><span class="highlight">KEELATUD</span>: Modid/Häkid = PERMA BAN</p>
-        <p><span class="highlight">KEELATUD</span>: Tuvastada kedagi hääle järgi</p>
-        <p><span class="highlight">KEELATUD</span>: GZ alades kuritegude toimepanek</p>
-        <p>Mikrofon on <span class="highlight">KOHUSTUSLIK</span> (Ära kasuta voice changerit, v.a admini loaga)</p>
-        <p>Tööd tuleb teha vastava tööautoga (Kui on saadaval)</p>
-        <p>Sõjaväelasi siin linnas EI eksisteeri</p>
-        <p>Kõik gangide alad on <span class="highlight">RED ZONE</span> (Sinna sisendes võivad gangid tule avada)</p>
-        <p><span class="highlight">KEELATUD</span>: Vangla platsil teise inimese tapmine</p>
-        <p><span class="highlight">KEELATUD</span>: Politsei mängimine = BAN</p>
-        <p>Kui keegi sihib sind, siis sa ei tõmba relva välja vaid allud</p>
-        <p><span class="highlight">KOHUSTUSLIK</span>: /me ja /do command, näiteks kui kiirabi sind elustab</p>
-        <p>Korraga võib olla üks character</p>
-        <p>Kõik gangid peavad olema nende jaoks mõeldud raadios</p>
-        <p><span class="highlight">KEELATUD</span>: Politseinike varustust varastada</p>
-        <p>Suuri Relvi võib võtta ainult kas kotist või autost</p>
-        <p><span class="highlight">KEELATUD</span>: Muusika laskmine läbi mikrofoni</p>
-        <p><span class="highlight">KEELATUD</span>: Leegionis lambist passimine</p>
-        <p><span class="highlight">KEELATUD</span>: GZ pagemine, et vältida kinnipidamist või kättemaksu</p>
-        <p><span class="highlight">KEELATUD</span>: Põgenemine majja või korterisse</p>
-        <h2>Röövi/Röövide Reeglid</h2>
-        <p>Ühte sama isikut võib röövida päevas 1 korra</p>
-        <p><span class="highlight">KEELATUD</span>: Pangaarvelt raha röövimine</p>
-        <p>Relva kasutamine ainult äärmisel juhul</p>
-        <p><span class="highlight">KOHUSTUSLIK</span>: Igal röövil peab olema pantvang</p>
-        <h2>Fraktsiooni Reeglid</h2>
-        <p>Kõikide gangide alad on <span class="highlight">RED ZONE</span></p>
-        <p>Fraktsioonide vahelist sõda saab teha, kui teavitad admineid ette vähemalt 1-2 päeva</p>
-        <p>Fraktsioonid EI VÕI lambist linnavahel lasta teiste gangidega</p>
-    </div>
+
+<header>
+    <h1>RP Serveri Reeglid ja Röövireeglid</h1>
+</header>
+
+<main>
+    <section>
+        <div class="section-header">
+            <h2>Üldreeglid</h2>
+        </div>
+        <div class="rules-list">
+            <ul>
+                <li><span class="section-title">Vaimuhaige</span>, massimõrvari, palgamõrvari jms karakteri mängimine on <span class="section-title">KEELATUD</span></li>
+                <li>Peale igat surma kehtib uue elu reegel</li>
+                <li>Kui respawnid haiglas on sul 25 minutit mälukaotust ja sa ei mäleta viimasest olukorrast midagi</li>
+                <li>Peale ühe liikme suremist/varastamist/kinnivõtmist/ära viimist teistest eemale on <span class="section-title">KEELATUD</span> teisel liikmel tema asemele tulla keset RP situatsiooni. Samuti ei tohi see liige enam peale suremist sekkuda</li>
+                <li>RP olukorra ajal OOC juttu ajamine <span class="section-title">KEELATUD</span></li>
+                <li>Metagaming <span class="section-title">KEELATUD</span></li>
+                <li>Combat Log <span class="section-title">KEELATUD</span></li>
+                <li>Powergame <span class="section-title">KEELATUD</span></li>
+                <li>FailRP <span class="section-title">KEELATUD</span></li>
+                <li>Cop-bait <span class="section-title">KEELATUD</span></li>
+                <li>VDM <span class="section-title">KEELATUD</span></li>
+                <li>RDM <span class="section-title">KEELATUD</span></li>
+                <li>Faildrive <span class="section-title">KEELATUD</span></li>
+                <li>FearRP/GunFear <span class="section-title">KEELATUD</span></li>
+                <li>Sõjaväe varustuse varastamine sõjaväebaasist <span class="section-title">KEELATUD</span></li>
+                <li>Päästmeametnike sõidukite varastamine on <span class="section-title">KEELATUD</span></li>
+                <li>Riigiametnike hukkamine <span class="section-title">KEELATUD</span></li>
+                <li>Bunnyhop <span class="section-title">KEELATUD</span></li>
+                <li>MoneyFlood <span class="section-title">KEELATUD</span></li>
+                <li>Buggide ära kasutamine <span class="section-title">KEELATUD</span></li>
+                <li>Modid/Häkid on rangelt <span class="section-title">KEELATUD</span> = PERMA BAN</li>
+                <li><span class="section-title">KEELATUD</span> on tuvastada kedagi hääle järgi</li>
+                <li>GZ alades on <span class="section-title">KEELATUD</span> panna toime kuritegusid</li>
+                <li>Mikrofon on <span class="section-title">KOHUSTUSLIK</span></li>
+                <li>Tööd tuleb teha vastava tööautoga (Kui on saadaval)</li>
+                <li>Sõjaväelasi siin linnas EI eksisteeri</li>
+                <li>Kiirusepiirangud: linnas sees 80mp/h, kaherealisel maanteel 125mp/h ja nelja või enama reaga kiirteel 200mp/h</li>
+                <li>GZ pagemine eesmärgiga vältida kinnipidamist või kättemaksu on <span class="section-title">KEELATUD</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <h2>Röövi Reeglid</h2>
+        </div>
+        <div class="rules-list">
+            <ul>
+                <li><span class="section-title">Ühte sama isikut võib röövida päevas 1 korra</span></li>
+                <li><span class="section-title">Pangaarvelt raha röövimine KEELATUD</span></li>
+                <li><span class="section-title">Relva kasutamine äärmisel juhul</span></li>
+                <li>Igal röövil pantvang <span class="section-title">KOHUSTUSLIK</span></li>
+                <li><span class="section-title">GZ alades on KEELATUD panna toime kuritegusid</span></li>
+                <li>Fake pantvang(e) EI või olla, pantvangi võib varastada, rp käigus saada</li>
+                <li>Lootimine <span class="section-title">KEELATUD</span></li>
+            </ul>
+        </div>
+
+        <div class="section-header">
+            <h2>Inimröövid</h2>
+        </div>
+        <div class="rules-list">
+            <ul>
+                <li>Riigitöötajaid (Kiirabi, Politsei) võib pantvangi võtta alates 3 politseinikuga</li>
+                <li>Inimest võib röövida väjaspool GZ</li>
+                <li>Inimest võib röövida alates 1 politseinikuga</li>
+                <li>Inimeselt võib korraga ära röövida 100k puhast raha ja 150k musta raha</li>
+                <li>Kui inimene on kinni seotud ja sidevahendid on eemaldatud ei saa inimene enam abi kutsuda</li>
+                <li>Kui inimene allub igale korraldusele ja nõustub koostööks ei ole alust tema hukkamiseks</li>
+                <li>Stun Guniga ei tohi teha rööve</li>
+            </ul>
+        </div>
+
+        <div class="section-header">
+            <h2>Poeröövid</h2>
+        </div>
+        <div class="rules-list">
+            <ul>
+                <li>Röövleid poeröövil MAX 2</li>
+                <li>Pantvange poeröövil MAX 2</li>
+                <li>Röövel ei tohi avada tuld enne politseiga läbirääkimisi</li>
+                <li>Politsei võib siseneda kui keegi ei sihi pantvangi</li>
+                <li>Järgmise poeröövi alustamiseks peab olema vähemalt 15 MIN vahet.</li>
+                <li>Poeröövil EI TOHI olla välisabi</li>
+                <li>Peale röövi EI võta pantvangi endaga kaasa</li>
+            </ul>
+        </div>
+
+        <div class="section-header">
+            <h2>Pangaröövid</h2>
+        </div>
+        <div class="rules-list">
+            <ul>
+                <li>Röövleid pangaröövil MAX 4</li>
+                <li>Pantvange pangaröövil MAX 3</li>
+                <li>Politseinikuid võib reageerida nii palju kui neid on</li>
+                <li>Politsei võib siseneda kui keegi ei sihi pantvangi</li>
+                <li>Järgmise pangaröövi alustamiseks peab olema vähemalt 1 TUND vahet</li>
+                <li>Iga pantvangi eest üks soov</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 RP Serveri Kõik õigused kaitstud. <a href="#">Kontaktige meid</a></p>
+    </footer>
+
 </body>
 </html>
